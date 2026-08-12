@@ -1,0 +1,147 @@
+
+import React from "react";
+import {
+  ArrowUpRight,
+  Sparkles,
+  MessageCircle,
+} from "lucide-react";
+
+import "../styles/cta.css";
+
+const CTA = () => {
+  return (
+    <section className="cta-section" id="contact">
+
+      {/* =====================================
+          BACKGROUND EFFECTS
+      ===================================== */}
+
+      <div className="cta-background"></div>
+
+      <div className="cta-glow cta-glow-purple"></div>
+
+      <div className="cta-glow cta-glow-pink"></div>
+
+      <div className="cta-glow cta-glow-blue"></div>
+
+
+      {/* Decorative floating elements */}
+
+      <div className="cta-orb cta-orb-one"></div>
+
+      <div className="cta-orb cta-orb-two"></div>
+
+      <div className="cta-orb cta-orb-three"></div>
+
+
+      {/* =====================================
+          MAIN CONTENT
+      ===================================== */}
+
+      <div className="cta-inner">
+
+        {/* Badge */}
+
+        <div className="cta-badge">
+
+          <span className="cta-badge-icon">
+            <Sparkles size={14} />
+          </span>
+
+          LET'S CREATE TOGETHER
+
+        </div>
+
+
+        {/* Heading */}
+
+        <h2 className="cta-title">
+
+          Have an idea?
+
+          <span>
+            Let's make it real.
+          </span>
+
+        </h2>
+
+
+        {/* Description */}
+
+        <p className="cta-description">
+
+          Great products start with a simple conversation.
+          Tell us what you're imagining and let's turn
+          your idea into something extraordinary.
+
+        </p>
+
+
+        {/* Buttons */}
+
+        <div className="cta-actions">
+
+          <a
+            href="mailto:hello@example.com"
+            className="cta-primary"
+          >
+
+            <span>
+              To Build a Product
+            </span>
+
+            <span className="cta-arrow">
+              <ArrowUpRight size={19} />
+            </span>
+
+          </a>
+
+
+          <a
+            href="mailto:hello@example.com"
+            className="cta-secondary"
+          >
+
+            <MessageCircle size={17} />
+
+            Let's talk
+
+          </a>
+
+        </div>
+
+
+        {/* Small availability */}
+
+        <div className="cta-status">
+
+          <span className="status-dot"></span>
+
+          Available for new projects
+
+        </div>
+
+      </div>
+
+
+      {/* =====================================
+          BOTTOM INFORMATION
+      ===================================== */}
+
+      <div className="cta-bottom">
+
+        <span>
+          HAVE A PROJECT IN MIND?
+        </span>
+
+        <span>
+          LET'S BUILD SOMETHING GREAT →
+        </span>
+
+      </div>
+
+    </section>
+  );
+};
+
+export default CTA;

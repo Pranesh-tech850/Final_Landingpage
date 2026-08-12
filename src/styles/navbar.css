@@ -1,0 +1,488 @@
+
+
+@import url(
+  "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+);
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 5%;
+ 
+  width: 90%;
+
+  padding: 9px 2.5%;
+  z-index: 1000;
+
+  font-family: "Poppins", sans-serif;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  box-shadow:
+    0 8px 32px
+    rgba(40, 30, 70, 0.06);
+
+  border-radius: 20px;
+}
+
+
+.navbar-container {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #111111;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+
+  text-decoration: none;
+}
+
+
+.logo-mark {
+  width: 22px;
+
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+  overflow: hidden;
+}
+
+
+.logo-mark img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   DESKTOP NAV LINKS
+========================================= */
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 26px;
+}
+
+
+.navbar-links a {
+  position: relative;
+
+  color: #111111;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -7px;
+
+  width: 0;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--brand-green),
+      var(--blossom-blue)
+    );
+
+  transition:
+    width 0.25s ease-in-out;
+}
+
+
+.navbar-links a:hover {
+  color: var(--brand-green);
+}
+
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   CONTACT BUTTON
+========================================= */
+
+.navbar-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    7px 14px;
+
+  color: lightcyan;
+
+  background:
+    var(--btn-primary-bg);
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.navbar-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 28px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+.navbar-button svg {
+  transition:
+    transform 0.25s ease;
+}
+
+
+.navbar-button:hover svg {
+  transform:
+    translate(
+       3px,
+      -3px
+    );
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-button {
+  display: none;
+
+  width: 36px;
+
+  height: 36px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 12px;
+
+  color: #111111;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.05
+    );
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.menu-button:hover {
+  background:
+    rgba(
+      136,
+      194,
+      63,
+      0.12
+    );
+
+  transform:
+    scale(1.05);
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+.mobile-nav-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 10px 4% 14px;
+}
+
+
+.mobile-nav-links a {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+    10px 12px;
+
+  color: #222222;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.mobile-nav-links a:hover {
+  color: var(--brand-green);
+
+  background:
+    rgba(
+      136,
+      194,
+      63,
+      0.07
+    );
+
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================
+   MOBILE CONTACT
+========================================= */
+
+.mobile-nav-links .mobile-contact {
+  margin-top: 8px;
+
+  padding: 11px 12px;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  font-weight: 600;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-green),
+      var(--blossom-blue)
+    );
+}
+
+
+.mobile-nav-links .mobile-contact:hover {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7bb336,
+      #2980b9
+    );
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    padding:
+      10px 4%;
+  }
+
+
+  /* Hide desktop links */
+
+  .navbar-links {
+    display: none;
+  }
+
+
+  /* Hide desktop contact */
+
+  .navbar-button {
+    display: none;
+  }
+
+
+  /* Show menu icon */
+
+  .menu-button {
+    display: flex;
+  }
+
+
+  /* Show mobile container */
+
+  .mobile-menu {
+    display: block;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    border-radius: 16px;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.96
+      );
+
+    backdrop-filter:
+      blur(20px);
+
+    -webkit-backdrop-filter:
+      blur(20px);
+
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease;
+  }
+
+
+  /* Open menu */
+
+  .mobile-menu-open {
+    max-height: 340px;
+
+    margin-top: 10px;
+
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .navbar-logo {
+    font-size: 14px;
+  }
+
+
+  .logo-mark {
+    width: 20px;
+
+    height: 20px;
+  }
+
+
+  .menu-button {
+    width: 33px;
+
+    height: 33px;
+  }
+
+}
+

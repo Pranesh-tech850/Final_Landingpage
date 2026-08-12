@@ -1,0 +1,728 @@
+
+/* =========================================
+   FEATURES SECTION
+========================================= */
+@import url(
+  'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap'
+);
+
+
+.features-section {
+  position: relative;
+  font-family: "Poppins";
+
+  padding:
+    30px 6%
+    70px;
+
+  overflow: hidden;
+
+  background:
+    /* picks up exactly where the Hero's fade ends */
+    linear-gradient(
+      to bottom,
+      #fdfefb 0%,
+      rgba(253, 254, 251, 0) 20%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f9fbf4 50%,
+      #f4f8ff 100%
+    );
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   BACKGROUND ORBS
+========================================= */
+
+.features-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation:
+    featureOrbFloat 10s
+    ease-in-out
+    infinite;
+}
+
+
+.features-orb-one {
+  width: 350px;
+
+  height: 350px;
+
+  left: -150px;
+
+  top: 15%;
+
+  background:
+    var(--glow-green);
+}
+
+
+.features-orb-two {
+  width: 300px;
+
+  height: 300px;
+
+  right: -100px;
+
+  top: 40%;
+
+  background:
+    var(--glow-blue);
+
+  animation-delay: 2s;
+}
+
+
+.features-orb-three {
+  width: 240px;
+
+  height: 240px;
+
+  left: 45%;
+
+  bottom: -120px;
+
+  background:
+    var(--glow-orange);
+
+  animation-delay: 4s;
+}
+
+
+@keyframes featureOrbFloat {
+
+  0%,
+  100% {
+    transform:
+      translate(
+        0,
+        0
+      );
+  }
+
+  50% {
+    transform:
+      translate(
+        30px,
+        -25px
+      );
+  }
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.features-header {
+  max-width: 640px;
+
+  margin:
+    0 auto
+    42px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: var(--badge-color);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  position: relative;
+}
+
+
+.section-label::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 25px;
+
+  height: 2px;
+
+  margin-right: 10px;
+
+  vertical-align: middle;
+
+  border-radius: 5px;
+
+  background:
+    var(--badge-dot-gradient);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.features-header h2 {
+  margin: 0;
+
+  color: #181620;
+
+  font-size:
+    clamp(
+      28px,
+      3.2vw,
+      42px
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -1.2px;
+
+  font-weight: 700;
+}
+
+
+.features-header h2 span {
+  display: block;
+
+  background:
+    var(--text-gradient);
+
+  background-size: 200% auto;
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    featureGradient 5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes featureGradient {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.features-header p {
+  max-width: 520px;
+
+  margin:
+    16px auto
+    0;
+
+  color: #747180;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.features-grid {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap: 22px;
+}
+
+
+/* =========================================
+   FEATURE CARD
+========================================= */
+
+.feature-card {
+  min-height: 300px;
+
+  padding: 26px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  border-radius: 22px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  border:
+    1px solid
+    rgba(
+      50,
+      40,
+      90,
+      0.08
+    );
+
+  box-shadow:
+    0 20px 60px
+    rgba(
+      40,
+      30,
+      90,
+      0.06
+    );
+
+  backdrop-filter: blur(18px);
+
+  transition:
+    transform 0.5s
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.feature-card:hover {
+  transform:
+    translateY(-14px);
+
+  box-shadow:
+    0 35px 80px
+    rgba(
+      136,
+      194,
+      63,
+      0.14
+    );
+
+  border-color:
+    rgba(
+      136,
+      194,
+      63,
+      0.2
+    );
+}
+
+
+/* =========================================
+   CARD NUMBER
+========================================= */
+
+.feature-number {
+  position: absolute;
+
+  top: 28px;
+
+  right: 30px;
+
+  color:
+    rgba(
+      30,
+      25,
+      55,
+      0.2
+    );
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.feature-icon {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  color: #ffffff;
+
+  position: relative;
+
+  z-index: 2;
+
+  transition:
+    transform 0.5s
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    );
+}
+
+
+.feature-card:hover .feature-icon {
+  transform:
+    rotate(-8deg)
+    scale(1.1);
+}
+
+
+/* =========================================
+   PURPLE
+========================================= */
+
+.feature-card-purple
+.feature-icon {
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-green),
+      #9ddb4e
+    );
+
+  box-shadow:
+    0 15px 35px
+    rgba(
+      136,
+      194,
+      63,
+      0.25
+    );
+}
+
+
+/* =========================================
+   BLUE
+========================================= */
+
+.feature-card-blue
+.feature-icon {
+  background:
+    linear-gradient(
+      135deg,
+      var(--blossom-blue),
+      #5dade2
+    );
+
+  box-shadow:
+    0 15px 35px
+    rgba(
+      52,
+      152,
+      219,
+      0.25
+    );
+}
+
+
+/* =========================================
+   ORANGE / PINK
+========================================= */
+
+.feature-card-orange
+.feature-icon {
+  background:
+    linear-gradient(
+      135deg,
+      var(--blossom-orange),
+      var(--blossom-yellow)
+    );
+
+  box-shadow:
+    0 15px 35px
+    rgba(
+      243,
+      156,
+      18,
+      0.25
+    );
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.feature-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.feature-content h3 {
+  margin:
+    0 0
+    10px;
+
+  color: #211e2b;
+
+  font-size: 18px;
+
+  letter-spacing: -0.4px;
+}
+
+
+.feature-content p {
+  margin: 0;
+
+  max-width: 300px;
+
+  color: #777381;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.feature-arrow {
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+
+  z-index: 3;
+
+  border-radius: 50%;
+
+  color: #403a52;
+
+  background:
+    rgba(
+      30,
+      25,
+      50,
+      0.06
+    );
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+
+.feature-card:hover
+.feature-arrow {
+  transform:
+    translate(
+      5px,
+      -5px
+    );
+
+  color: #ffffff;
+
+  background:
+    var(--brand-green);
+}
+
+
+/* =========================================
+   CARD GLOW
+========================================= */
+
+.card-glow {
+  position: absolute;
+
+  width: 220px;
+
+  height: 220px;
+
+  right: -100px;
+
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      136,
+      194,
+      63,
+      0.12
+    );
+
+  filter: blur(45px);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+
+.feature-card:hover
+.card-glow {
+  opacity: 1;
+
+  transform:
+    scale(1.5);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .features-section {
+    padding:
+      30px 6%
+      70px;
+  }
+
+
+  .features-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .feature-card:last-child {
+    grid-column:
+      span 2;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .features-section {
+    padding:
+      35px 20px
+      65px;
+  }
+
+
+  .features-header {
+    margin-bottom: 40px;
+  }
+
+
+  .features-header h2 {
+    font-size: 28px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .features-header p {
+    font-size: 13.5px;
+  }
+
+
+  .features-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .feature-card:last-child {
+    grid-column: auto;
+  }
+
+
+  .feature-card {
+    min-height: 270px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+  }
+
+}
