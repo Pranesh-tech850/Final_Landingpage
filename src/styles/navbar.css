@@ -178,7 +178,7 @@
   padding:
     7px 14px;
 
-  color: lightcyan;
+  color: rgb(227, 242, 242);
 
   background:
     var(--btn-primary-bg);
@@ -261,12 +261,7 @@
 
 .menu-button:hover {
   background:
-    rgba(
-      136,
-      194,
-      63,
-      0.12
-    );
+    rgba(0, 0, 0, 0.12);
 
   transform:
     scale(1.05);
@@ -427,13 +422,7 @@
 
     border-radius: 16px;
 
-    background:
-      rgba(
-        255,
-        255,
-        255,
-        0.96
-      );
+    background:lightgoldenrodyellow;
 
     backdrop-filter:
       blur(20px);
