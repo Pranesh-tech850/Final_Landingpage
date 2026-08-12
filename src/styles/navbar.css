@@ -21,7 +21,7 @@
 
   font-family: "Poppins", sans-serif;
 
-  background: lightgoldenrodyellow;
+  background: lightyellow;
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -362,92 +362,78 @@
 
 
 .mobile-nav-links .mobile-contact:hover {
-  color: #ffffff;
+  color: #901c1c;
 
   background:
     linear-gradient(
-      135deg,
-      #7bb336,
-      #2980b9
+      90deg,
+      #282a25,
+      #929394
     );
 
   transform:
-    translateY(-2px);
+    translateY(-10px);
 }
 
 
 /* =========================================
    TABLET / MOBILE
 ========================================= */
-
 @media (max-width: 800px) {
 
   .navbar {
-    padding:
-      10px 4%;
+    padding: 10px 4%;
+    position: fixed;
   }
-
-
-  /* Hide desktop links */
 
   .navbar-links {
     display: none;
   }
 
-
-  /* Hide desktop contact */
-
   .navbar-button {
     display: none;
   }
-
-
-  /* Show menu icon */
 
   .menu-button {
     display: flex;
   }
 
-
-  /* Show mobile container */
-
+  /* Separate mobile menu */
   .mobile-menu {
     display: block;
 
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
+    width: 100%;
+
     max-height: 0;
-
     overflow: hidden;
-
     opacity: 0;
 
     border-radius: 16px;
 
-    background:lightgoldenrodyellow;
+    background: lightgoldenrodyellow;
 
-    backdrop-filter:
-      blur(20px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    -webkit-backdrop-filter:
-      blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    box-shadow:
+      0 8px 32px rgba(40, 30, 70, 0.12);
 
     transition:
       max-height 0.4s ease,
       opacity 0.3s ease;
   }
 
-
   /* Open menu */
-
   .mobile-menu-open {
     max-height: 340px;
-
-    margin-top: 10px;
-
     opacity: 1;
   }
-
 }
-
 
 /* =========================================
    SMALL MOBILE

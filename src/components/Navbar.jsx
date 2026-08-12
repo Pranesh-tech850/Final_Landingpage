@@ -158,8 +158,7 @@ const Navbar = () => {
           </a>
 
           <a
-            href="#contact"
-            className="mobile-contact"
+            href="#contac"
             onClick={closeMenu}
           >
 
