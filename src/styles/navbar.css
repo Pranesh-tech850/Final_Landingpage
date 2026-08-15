@@ -412,8 +412,7 @@
     opacity: 0;
 
     border-radius: 16px;
-
-    background: lightgoldenrodyellow;
+    background:lightgoldenrodyellow;
 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
