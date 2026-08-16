@@ -15,10 +15,14 @@ import {
   FiMail,
 } from "react-icons/fi";
 
+import { useNavigate } from "react-router-dom"
+
 import "../styles/footer.css";
 
 const Footer = () => {
+    const navigate = useNavigate();
   return (
+  
     <footer className="footer">
 
       {/* =====================================
@@ -71,7 +75,7 @@ const Footer = () => {
 
 
           <a href="#projects">
-            Projects
+            Products
           </a>
 
 
@@ -80,7 +84,10 @@ const Footer = () => {
           </a>
 
 
-          <a href="#contact">
+          <a href="#contact" onClick={(e) => {
+            e.preventDefault();
+            navigate("/contact")
+          }}>
             Contact
           </a>
 
@@ -142,7 +149,7 @@ const Footer = () => {
           </a>
 
 
-          <a
+          {/* <a
             href="mailto:admin@innovativeblossom.com"
             className="footer-mail-button"
           >
@@ -151,7 +158,7 @@ const Footer = () => {
 
             Let's talk
 
-          </a>
+          </a> */}
 
         </div>
 

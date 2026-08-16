@@ -1,5 +1,5 @@
 
-import React, {useState } from "react";
+import React, {useState} from "react";
 import {
   Menu,
   X,
@@ -10,9 +10,12 @@ import "../styles/navbar.css";
 
 import IB_LOGO from "../assets/models/IB_LOGO.png";
 
+import { Link,useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
 
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
 
@@ -21,7 +24,9 @@ const Navbar = () => {
   };
 
 
+
   return (
+    
 
     <header className="navbar">
 
@@ -68,7 +73,7 @@ const Navbar = () => {
             About
           </a>
 
-          <a href="#contact">
+          <a href="#cta">
             Services
           </a>
 
@@ -86,6 +91,10 @@ const Navbar = () => {
         <a
           href="#contact"
           className="navbar-button"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/contact")
+          }}
         >
 
           Contact Us
@@ -144,7 +153,7 @@ const Navbar = () => {
           </a>
 
           <a
-            href="#contact"
+            href="#cta"
             onClick={closeMenu}
           >
             Services
@@ -157,15 +166,9 @@ const Navbar = () => {
             Products
           </a>
 
-          <a
-            href="#contac"
-            onClick={closeMenu}
-          >
-
-            Contact Us
-
-           
-          </a>
+         
+       <Link to="/contact">Contact us</Link>
+      
 
         </nav>
 

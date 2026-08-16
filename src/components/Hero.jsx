@@ -9,6 +9,8 @@ const MARQUEE_WORDS = [
   "Innovation",
   "Creativity",
   "Digital Experiences",
+  "Project ideas",
+  "Business Solutions"
 ];
 
 const Hero = () => {
@@ -37,19 +39,7 @@ const Hero = () => {
         </p>
 
 
-        <div className="hero-buttons">
-
-          <button className="primary-btn">
-            Get Started
-           
-          </button>
-
-
-          <button className="secondary-btn">
-            Explore More
-          </button>
-
-        </div>
+       
 
       </div>
 

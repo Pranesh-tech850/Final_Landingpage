@@ -99,7 +99,7 @@ const Projects = () => {
 
           <h3>
             ToGather
-            <span> Events.</span>
+            <span> Event App</span>
           </h3>
 
 
@@ -151,107 +151,7 @@ const Projects = () => {
           CONTENT LEFT / IMAGE RIGHT
       ===================================== */}
 
-      <article className="project-row project-row-two">
-
-        {/* CONTENT */}
-
-        <div className="project-content">
-
-          <div className="project-category">
-            MATRIMONIAL
-          </div>
-
-
-          <h3>
-            Cmy
-            <span>Roots.</span>
-          </h3>
-
-
-          <p>
-            CmyRoots is a matrimonial platform created to make
-            discovering future loyal partners.
-          </p>
-
-
-          <p>
-            Explore destinations, discover routes, and build
-            unforgettable travel experiences from one place.
-          </p>
-
-
-          {/* Technologies */}
-
-          {/* <div className="project-technologies">
-
-            <span>React</span>
-
-            <span>Maps API</span>
-
-            <span>Node.js</span>
-
-          </div> */}
-
-
-          {/* Button */}
-
-          <a
-            href="#"
-            className="project-button"
-          >
-            View product
-          
-
-          </a>
-
-        </div>
-
-
-        {/* IMAGE */}
-
-        <div className="project-image-section">
-
-          {/* Ambient glow */}
-
-          <div className="project-glow glow-blue"></div>
-
-
-          {/* Decorative blobs */}
-
-          <div className="project-orb orb-blue"></div>
-
-          <div className="project-orb orb-cyan"></div>
-
-
-          {/* Project number */}
-
-          <div className="project-number">
-            02
-          </div>
-
-
-          {/* Image */}
-
-          <div className="project-image-wrapper">
-
-            <img
-              src={cMyRoutes}
-              alt="CmyRoutes"
-              className="project-image"
-            />
-
-          </div>
-
-
-          {/* Floating label */}
-
-          <div className="floating-project-label">
-            MATRIMONIAL
-          </div>
-
-        </div>
-
-      </article>
+    
 
     </section>
   );

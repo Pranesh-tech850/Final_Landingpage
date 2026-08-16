@@ -6,11 +6,14 @@ import {
   MessageCircle,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+import ContactModal from "./ContactModal"
 import "../styles/cta.css";
 
 const CTA = () => {
+  const navigate = useNavigate();
   return (
-    <section className="cta-section" id="contact">
+    <section className="cta-section" id="cta">
 
       {/* =====================================
           BACKGROUND EFFECTS
@@ -81,33 +84,33 @@ const CTA = () => {
 
         <div className="cta-actions">
 
-          <a
+          {/* <a
             href="mailto:hello@example.com"
             className="cta-primary"
-          >
+          > */}
 
-            <span>
+            {/* <span>
               To Build a Product
             </span>
 
             <span className="cta-arrow">
               <ArrowUpRight size={19} />
-            </span>
+            </span> */}
 
-          </a>
+          
 
 
-          <a
-            href="mailto:hello@example.com"
-            className="cta-secondary"
-          >
+  <div className="cta-actions">
 
-            <MessageCircle size={17} />
+         <button
+  className="cta-secondary"
+  onClick={() => navigate("/contact ")}
+>
+  <MessageCircle size={17} />
+  Let's talk
+</button>
 
-            Let's talk
-
-          </a>
-
+        </div>
         </div>
 
 
