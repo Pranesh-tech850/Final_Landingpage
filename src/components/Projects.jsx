@@ -2,7 +2,7 @@
 import React from "react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 
-import togetherEvents from "../assets/models/matrimony.png";
+import togetherEvents from "../assets/models/fab20616-f4ae-4a42-a739-afaaf616c08e.png";
 import cMyRoutes from "../assets/models/cMyRoutes.png";
 
 import "../styles/projects.css";
@@ -72,7 +72,7 @@ const Projects = () => {
 
             <img
               src={togetherEvents}
-              alt="Together Events"
+              alt="ToGather Event App"
               className="project-image"
             />
 
@@ -104,7 +104,7 @@ const Projects = () => {
 
 
           <p>
-            Together Events is a modern platform designed to
+            Together Event App is a modern platform designed to
             bring people together through meaningful events
             and experiences.
           </p>
@@ -132,12 +132,14 @@ const Projects = () => {
           {/* Button */}
 
           <a
-            href="#"
+            href="https://togatherevent.com/"
             className="project-button"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             View Product
 
-           
+
 
           </a>
 

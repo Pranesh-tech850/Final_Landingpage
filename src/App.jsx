@@ -39,9 +39,17 @@ const App = () => {
           element={<Home />}
         />
 
+        {/* Home stays mounted underneath so this reads as a modal over
+            the landing page instead of a full-page takeover */}
+
         <Route
           path="/contact"
-          element={<ContactModal />}
+          element={
+            <>
+              <Home />
+              <ContactModal />
+            </>
+          }
         />
 
       </Routes>

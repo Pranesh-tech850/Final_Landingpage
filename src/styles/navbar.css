@@ -443,23 +443,49 @@
 
     border-radius: 10px;
 
-   background:
-      linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.94),
-        rgba(248, 250, 252, 0.90)
-      );
+    /* Same transparent glass as desktop — let the hero glow read through */
+    background: transparent;
 
     backdrop-filter: blur(20px);
 
     -webkit-backdrop-filter: blur(20px);
 
-   
+    border: 1px solid rgba(255, 255, 255, 0.6);
 
     box-shadow:
       0 10px 35px
       rgba(30, 30, 60, 0.08);
+
+    /* The card clips the menu as it expands */
+    overflow: hidden;
+
+    transition:
+      background 0.35s ease,
+      backdrop-filter 0.35s ease;
  }
+
+
+  /* Open: the bar grows into one card holding the links.
+     Tint + heavier blur so the hero behind dissolves instead of
+     reading through the links. */
+
+  .navbar-menu-open {
+    background:
+      linear-gradient(
+        160deg,
+        rgba(255, 250, 240, 0.55),
+        rgba(252, 253, 246, 0.5) 50%,
+        rgba(243, 249, 232, 0.55)
+      );
+
+    backdrop-filter: blur(40px) saturate(180%);
+
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+
+    box-shadow:
+      0 20px 50px
+      rgba(30, 30, 60, 0.1);
+  }
 
   .navbar-links {
     display: none;
@@ -473,49 +499,57 @@
     display: flex;
   }
 
-  /* Separate mobile menu */
+  /* Lower half of the card. No background, border, radius or blur of
+     its own — .navbar supplies all of that for the whole shape. It
+     only grows the card's height when open. */
+
   .mobile-menu {
-       display: block;
+    display: block;
 
-    position: fixed;
-    left: 0;
-
-    width: 92vw;
-    min-height: auto;
-    /* height:100vh; */
     overflow: hidden;
+
+    max-height: 0;
 
     opacity: 0;
 
-    visibility : hidden;
-       background:
-      linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.94),
-        rgba(248, 250, 252, 0.90)
-      );
-      backdrop-filter: blur(25px);
-
-    -webkit-backdrop-filter: blur(50px);
-
-     
-
-    box-shadow:
-      0 20px 50px
-      rgba(30, 30, 60, 0.08);
-
     transition:
-      opacity 0.35s ease,
-      transform 0.35s ease,
-      visibility 0.35s ease;
+      max-height 0.35s ease,
+      opacity 0.25s ease;
   }
 
 
   /* Open menu */
   .mobile-menu-open {
+    /* Cap only — the card settles at content height */
+    max-height: 320px;
+
     opacity: 1;
-    visibility : visible;
-    transform: translateY(0)
+  }
+
+
+  /* Hairline separating the links from the bar row, like the divider
+     above Raycast's "Log in" */
+
+  .mobile-nav-links {
+    border-top:
+      1px solid
+      rgba(40, 30, 70, 0.08);
+
+    margin-top: 8px;
+
+    /* .navbar already supplies the horizontal inset */
+    padding: 8px 2px 10px;
+
+    gap: 2px;
+  }
+
+
+  .mobile-nav-links a {
+    padding: 10px 12px;
+
+    font-size: 15.5px;
+
+    border-radius: 10px;
   }
 }
 
@@ -557,30 +591,23 @@
     height: 33px;
   }
 
-    .mobile-menu {
-
-    top: 58px;
-
-    padding-top: 5px;
-  }
-
-
   .mobile-nav-links {
 
-    padding:
-      18px 16px 22px;
+    padding: 7px 2px 9px;
 
-    gap: 4px;
+    gap: 2px;
+
+    margin-top: 7px;
   }
 
 
   .mobile-nav-links a {
 
-    padding: 13px 16px;
+    padding: 9px 11px;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
 

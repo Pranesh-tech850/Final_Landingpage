@@ -878,6 +878,78 @@
     padding:
       85px 20px
       64px;
+
+    /* Stacked layout is tall and narrow — reposition the glows around the
+       column so the colour still reads instead of hiding off-canvas */
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(253, 254, 251, 0) 78%,
+        #fdfefb 100%
+      ),
+      radial-gradient(
+        circle at 88% 46%,
+        rgba(136, 194, 63, 0.3),
+        transparent 42%
+      ),
+      radial-gradient(
+        circle at 8% 12%,
+        rgba(243, 156, 18, 0.22),
+        transparent 42%
+      ),
+      radial-gradient(
+        circle at 90% 88%,
+        rgba(52, 152, 219, 0.24),
+        transparent 40%
+      ),
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f9fbf4 45%,
+        #f2f9e6 100%
+      );
+  }
+
+
+  /* Scale the orbs to the viewport so they cover the same share of the
+     hero as they do on desktop instead of collapsing to a small dot */
+
+  .hero::before {
+    width: 118vw;
+    height: 118vw;
+
+    left: -44vw;
+    top: 20%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(243, 156, 18, 0.26),
+        transparent 65%
+      );
+
+    filter: blur(55px);
+  }
+
+
+  .hero::after {
+    width: 108vw;
+    height: 108vw;
+
+    right: -40vw;
+
+    /* Stacked layout puts the 3D model in the lower half — follow it */
+    top: auto;
+    bottom: 6%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(136, 194, 63, 0.32),
+        transparent 65%
+      );
+
+    filter: blur(50px);
   }
 
 
@@ -959,6 +1031,47 @@
     padding:
       80px 20px
       58px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(253, 254, 251, 0) 82%,
+        #fdfefb 100%
+      ),
+      radial-gradient(
+        circle at 78% 66%,
+        rgba(136, 194, 63, 0.34),
+        transparent 46%
+      ),
+      radial-gradient(
+        circle at 6% 14%,
+        rgba(243, 156, 18, 0.28),
+        transparent 46%
+      ),
+      radial-gradient(
+        circle at 90% 92%,
+        rgba(52, 152, 219, 0.26),
+        transparent 44%
+      ),
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f9fbf4 45%,
+        #f2f9e6 100%
+      );
+  }
+
+
+  /* Sizes stay viewport-relative (set at <=700px); only the blur softens
+     so the orbs don't band on a small screen */
+
+  .hero::before {
+    filter: blur(48px);
+  }
+
+
+  .hero::after {
+    filter: blur(44px);
   }
 
 

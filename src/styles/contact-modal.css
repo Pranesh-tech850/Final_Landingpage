@@ -18,9 +18,28 @@
 
   padding: 20px;
 
-  background:white;
+  /* Translucent scrim, not a solid sheet — the landing page stays
+     visible (blurred) behind it, tinted with the brand glow */
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      var(--glow-orange),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 84% 30%,
+      var(--glow-green),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 78% 88%,
+      var(--glow-blue),
+      transparent 42%
+    ),
+    rgba(250, 252, 245, 0.55);
 
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
 
   animation: overlayFade 0.35s ease forwards;
 
@@ -37,25 +56,38 @@
 
   width: min(560px, 100%);
 
-  max-height: none;
+  /* Never taller than the viewport, and scroll internally if the
+     content still doesn't fit — otherwise the submit button gets
+     clipped off the bottom with no way to reach it */
+  max-height: calc(100vh - 40px);
 
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-  padding: 42px;
+  overscroll-behavior: contain;
+
+  padding: 32px 38px;
 
   border-radius: 28px;
 
-  background:whitesmoke;
+  /* Frosted card, same glass language as the navbar */
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(250, 252, 245, 0.76)
+    );
 
-  color:black;
+  color: #17151f;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.75);
 
   box-shadow:
-    0 30px 100px rgba(0, 0, 0, 0.6),
-    0 0 80px rgba(139, 92, 246, 0.15);
+    0 30px 80px rgba(40, 30, 70, 0.12),
+    0 0 60px var(--glow-green);
 
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px) saturate(160%);
+  -webkit-backdrop-filter: blur(30px) saturate(160%);
 
   animation: modalEnter 0.55s cubic-bezier(.16, 1, .3, 1);
 
@@ -81,11 +113,11 @@
 
   transform: translateX(-50%);
 
-  background: #e1e0e3;
+  background: var(--brand-green);
 
   filter: blur(100px);
 
-  opacity: 0.18;
+  opacity: 0.22;
 
   pointer-events: none;
 
@@ -110,13 +142,11 @@
 
   border-radius: 50%;
 
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(40, 30, 70, 0.1);
 
-  background: rgba(233, 227, 227, 0.05);
-  /* background:lightgoldenrodyellow; */
+  background: rgba(255, 255, 255, 0.55);
 
-
-  color:black;
+  color: #454150;
 
   display: flex;
 
@@ -134,7 +164,9 @@
 
   transform: rotate(90deg);
 
-  background: rgba(255,255,255,0.12);
+  background: #ffffff;
+
+  color: #17151f;
 
 }
 
@@ -147,18 +179,18 @@
 
   text-align: center;
 
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 
 }
 
 
 .contact-icon {
 
-  width: 52px;
+  width: 46px;
 
-  height: 52px;
+  height: 46px;
 
-  margin: 0 auto 15px;
+  margin: 0 auto 12px;
 
   border-radius: 16px;
 
@@ -168,17 +200,17 @@
 
   justify-content: center;
 
-  color: black;
+  color: #ffffff;
 
   background:
     linear-gradient(
       135deg,
-      #8b5cf6,
-      #ec4899
+      var(--brand-green),
+      var(--blossom-orange)
     );
 
   box-shadow:
-    0 10px 30px rgba(139,92,246,0.35);
+    0 10px 30px var(--btn-primary-shadow);
 
   animation: iconFloat 3s ease-in-out infinite;
 
@@ -197,7 +229,7 @@
 
   letter-spacing: 3px;
 
-  color:black;
+  color: var(--badge-color);
 
 }
 
@@ -206,13 +238,15 @@
 
   margin: 0;
 
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: clamp(25px, 3.6vw, 34px);
 
-  line-height: 1.1;
+  line-height: 1.12;
 
   font-weight: 700;
 
-  color: black;
+  color: #17151f;
+
+  letter-spacing: -1.2px;
 
 }
 
@@ -221,19 +255,16 @@
 
   display: block;
 
-  background:
-    linear-gradient(
-      90deg,
-      #a78bfa,
-      #f472b6,
-      #60a5fa
-    );
+  /* Same animated brand sweep as the hero title */
+  background: var(--text-gradient);
 
   -webkit-background-clip: text;
 
   background-clip: text;
 
-  color: black;
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
 
   background-size: 200% auto;
 
@@ -246,13 +277,13 @@
 
   max-width: 420px;
 
-  margin: 15px auto 0;
+  margin: 10px auto 0;
 
-  color: #9999aa;
+  color: #686575;
 
-  font-size: 14px;
+  font-size: 13.5px;
 
-  line-height: 1.7;
+  line-height: 1.6;
 
 }
 
@@ -267,7 +298,7 @@
 
   flex-direction: column;
 
-  gap: 19px;
+  gap: 14px;
 
 }
 
@@ -278,7 +309,7 @@
 
   flex-direction: column;
 
-  gap: 8px;
+  gap: 6px;
 
 }
 
@@ -313,11 +344,29 @@
 
   left: 16px;
 
-  color: #77758c;
-/* 
-  pointer-events: none; */
+  color: #8a8798;
+
+  /* Without this the icon swallows clicks aimed at the field */
+  pointer-events: none;
 
   transition: 0.3s ease;
+
+}
+
+
+/* The textarea is ~110px tall, so a vertically-centred icon floats in
+   the middle of the box. Pin it to the first line instead. */
+
+.textarea-wrapper {
+
+  align-items: flex-start;
+
+}
+
+
+.textarea-wrapper svg {
+
+  top: 16px;
 
 }
 
@@ -329,17 +378,17 @@
 
   box-sizing: border-box;
 
-  padding: 15px 16px 15px 48px;
+  padding: 12px 16px 12px 46px;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
-  border: 1px solid rgba(255,255,255,0.09);
+  border: 1px solid rgba(40, 30, 70, 0.1);
 
   outline: none;
 
-  background: rgba(255,255,255,0.045);
+  background: rgba(255, 255, 255, 0.6);
 
-  color: rgb(33, 31, 31);
+  color: #17151f;
 
   font-family: inherit;
 
@@ -352,9 +401,13 @@
 
 .input-wrapper textarea {
 
-  resize:horizontal;
+  /* was `horizontal` — that let the box be dragged out past the modal
+     and broke the field alignment */
+  resize: vertical;
 
-  min-height: 110px;
+  min-height: 84px;
+
+  max-height: 220px;
 
   line-height: 1.6;
 
@@ -364,7 +417,7 @@
 .input-wrapper input::placeholder,
 .input-wrapper textarea::placeholder {
 
-  color: #626274;
+  color: #9b98a8;
 
 }
 
@@ -372,22 +425,20 @@
 .input-wrapper input:focus,
 .input-wrapper textarea:focus {
 
-  border-color: rgba(32, 32, 33, 0.8);
+  border-color: var(--brand-green);
 
-  background: rgba(139,92,246,0.06);
+  background: rgba(255, 255, 255, 0.9);
 
   box-shadow:
-    0 0 0 4px rgba(139,92,246,0.08),
-    0 10px 30px rgba(0,0,0,0.15);
+    0 0 0 4px rgba(136, 194, 63, 0.14),
+    0 10px 30px rgba(40, 30, 70, 0.07);
 
 }
 
 
 .input-wrapper:focus-within svg {
 
-  color: #1f1f20;
-
-  transform: scale(1);
+  color: var(--badge-color);
 
 }
 
@@ -402,15 +453,18 @@
 
   overflow: hidden;
 
-  margin-top: 8px;
+  margin-top: 4px;
 
   width: 100%;
 
-  padding: 16px 20px;
+  /* Never let the button shrink out of view when the modal scrolls */
+  flex-shrink: 0;
+
+  padding: 14px 20px;
 
   border: none;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
   display: flex;
 
@@ -422,22 +476,30 @@
 
   cursor: pointer;
 
-  color:black;
+  color: #ffffff;
 
   font-family: inherit;
 
-  font-size: 14px;
+  font-size: 15px;
 
   font-weight: 600;
 
-  background: lightgreen;
+  background:
+    linear-gradient(
+      90deg,
+      var(--brand-green),
+      #6fa32d,
+      var(--brand-green)
+    );
 
   background-size: 200% auto;
 
   box-shadow:
-    0 12px 30px rgba(139,92,246,0.25);
+    0 12px 30px var(--btn-primary-shadow);
 
-  transition: all 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 
   animation: gradientMove 4s linear infinite;
 
@@ -485,7 +547,7 @@
   transform: translateY(-3px);
 
   box-shadow:
-    0 18px 40px rgba(139,92,246,0.4);
+    0 18px 40px var(--btn-primary-shadow-hover);
 
 }
 
@@ -532,14 +594,14 @@
 
   border-radius: 50%;
 
-  color: #18181a;
+  color: var(--badge-color);
 
-  background: rgba(139,92,246,0.12);
+  background: rgba(136, 194, 63, 0.12);
 
-  border: 1px solid rgba(139,92,246,0.3);
+  border: 1px solid rgba(136, 194, 63, 0.3);
 
   box-shadow:
-    0 0 50px rgba(139,92,246,0.25);
+    0 0 50px var(--glow-green);
 
   animation:
     successPop 0.7s cubic-bezier(.16,1,.3,1);
@@ -553,7 +615,7 @@
 
   font-size: 32px;
 
-  color: rgb(13, 13, 13);
+  color: #17151f;
 
 }
 
@@ -562,7 +624,7 @@
 
   max-width: 350px;
 
-  color: #2e2e3b;
+  color: #686575;
 
   line-height: 1.6;
 
@@ -575,26 +637,38 @@
 
   padding: 12px 30px;
 
-  border: 1px solid rgba(255,255,255,0.12);
+  border: none;
 
   border-radius: 12px;
 
-  background:lightgreen;
+  background: var(--primary-gradient);
 
-  color: rgb(87, 44, 44);
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 12px 30px var(--btn-primary-shadow);
 
   cursor: pointer;
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
 }
 
 
 .success-button:hover {
 
-  
-
   transform: translateY(-2px);
+
+  box-shadow:
+    0 18px 40px var(--btn-primary-shadow-hover);
 
 }
 
@@ -624,9 +698,9 @@
 
   left: 15%;
 
-  background: #a78bfa;
+  background: var(--brand-green);
 
-  box-shadow: 0 0 20px #a78bfa;
+  box-shadow: 0 0 20px var(--brand-green);
 
   animation: particleFloat 5s infinite ease-in-out;
 
@@ -643,9 +717,9 @@
 
   right: 18%;
 
-  background: #f472b6;
+  background: var(--blossom-orange);
 
-  box-shadow: 0 0 20px #f472b6;
+  box-shadow: 0 0 20px var(--blossom-orange);
 
   animation: particleFloat 7s infinite ease-in-out reverse;
 
@@ -662,9 +736,9 @@
 
   left: 20%;
 
-  background: #60a5fa;
+  background: var(--blossom-blue);
 
-  box-shadow: 0 0 20px #60a5fa;
+  box-shadow: 0 0 20px var(--blossom-blue);
 
   animation: particleFloat 6s infinite ease-in-out;
 
@@ -681,9 +755,9 @@
 
   right: 15%;
 
-  background: #c084fc;
+  background: var(--blossom-yellow);
 
-  box-shadow: 0 0 15px #c084fc;
+  box-shadow: 0 0 15px var(--blossom-yellow);
 
   animation: particleFloat 8s infinite ease-in-out reverse;
 
@@ -837,18 +911,27 @@
 
   .contact-modal {
 
-    padding: 30px 20px;
+    padding: 26px 18px;
 
     border-radius: 22px;
 
-    max-height: 94vh;
+    /* dvh tracks the real viewport once mobile browser chrome collapses;
+       vh would leave the button under the address bar */
+    max-height: calc(100dvh - 28px);
 
   }
 
 
   .contact-header h2 {
 
-    font-size: 29px;
+    font-size: 26px;
+
+  }
+
+
+  .contact-header {
+
+    margin-bottom: 18px;
 
   }
 
@@ -865,6 +948,17 @@
     top: 12px;
 
     right: 12px;
+
+  }
+
+
+  /* A fixed 430px floor overflows a short phone viewport */
+
+  .contact-success {
+
+    min-height: auto;
+
+    padding: 20px 0;
 
   }
 

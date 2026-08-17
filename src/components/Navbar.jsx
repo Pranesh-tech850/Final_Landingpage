@@ -26,9 +26,12 @@ const Navbar = () => {
 
 
   return (
-    
 
-    <header className="navbar">
+    <header
+      className={`navbar ${
+        menuOpen ? "navbar-menu-open" : ""
+      }`}
+    >
 
       <div className="navbar-container">
 
@@ -128,6 +131,10 @@ const Navbar = () => {
 
       {/* =====================================
           MOBILE NAVIGATION
+
+          Lives INSIDE the bar so the two form a single card: .navbar
+          owns the background, border, radius and blur, and this panel
+          just extends its height when open.
       ===================================== */}
 
       <div
