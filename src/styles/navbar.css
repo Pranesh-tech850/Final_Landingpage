@@ -444,7 +444,7 @@
     border-radius: 10px;
 
     /* Same transparent glass as desktop — let the hero glow read through */
-    background: transparent;
+     background: rgba(255,255,255,0.15);
 
     backdrop-filter: blur(20px);
 
